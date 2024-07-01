@@ -1,23 +1,17 @@
-import {useEffect, useState} from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { FileImportComponent, MainComponent } from "./components";
 
 function App() {
-
-  const [hello, setHello] = useState('');
-
-  console.log('dd', hello);
-
-    useEffect(() => {
-        axios.get('/api/test')
-            .then((res) => {
-                setHello(res.data);
-            })
-    }, []);
-    return (
-        <div className="App">
-            백엔드 데이터 : {hello}
-        </div>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<div />} />
+        <Route path="/main" element={<MainComponent />} />
+        <Route path="/file" element={<FileImportComponent />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
