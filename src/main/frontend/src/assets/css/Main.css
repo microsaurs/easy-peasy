@@ -1,0 +1,99 @@
+body {
+  margin: 100px 0;
+}
+
+/* 로고 + 프로젝트명 */
+#title {
+  font-family: var(--font-NanumSquareNeoExtra);
+  text-align: center;
+  margin: auto;
+  position: relative;
+  width: 250px;
+}
+
+/* 로고 */
+#logo {
+  width: 40px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+}
+
+/* 한제 */
+#title div:nth-child(2) {
+  font-size: 40px;
+}
+
+/* 영제 */
+#title div:last-child {
+  font-size: 30px;
+}
+
+/* 설명 */
+#description {
+
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px auto;
+  text-align: center;
+  width: 500px;
+
+}
+
+/* 세상 쉬운 */
+#description span {
+  color: #95b75c;
+}
+
+/* 시작하기 버튼 */
+#btn-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+#btn-box button {
+  font-family: var(--font-NanumSquareNeoExtra);
+  font-size: 25px;
+  text-align: center;
+  padding: 10px 0;
+
+  width: 250px;
+
+  background: rgba(149, 183, 92, 0.45);
+  border-radius: 44px;
+  border: none;
+}
+
+/* 사용법 */
+.steps {
+
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.steps > div {
+  
+  /* 박스 크기 안줄어들게 */
+  flex-shrink: 0;
+  
+  width: 200px;
+  height: 250px;
+  margin: 20px;
+  padding-bottom: 15px;
+  
+  text-align: center;
+
+  background: rgba(217, 217, 217, 0.25);
+}
+
+.steps > div > div {
+  padding: 20px;
+}
+
+
+.steps img {
+  width: 150px;
+  height: 100px;
+}
