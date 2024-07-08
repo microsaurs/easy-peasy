@@ -2,19 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../assets/css/Main.css";
 
-import logo from "../../assets/images/logo.png";
+
 import step1 from '../../assets/images/step1.JPG';
 import step2 from '../../assets/images/step2.JPG';
 import step3 from '../../assets/images/step3.JPG';
+import TitleComponent from "./TitleComponent";
 
-// Title 컴포넌트
-const Title = () => (
-  <div id="title">
-    <img id="logo" src={logo} alt="Logo" />
-    <div>이지피지</div>
-    <div>Easy Peasy</div>
-  </div>
-);
+
 
 // Step 데이터
 const stepsData = [
@@ -63,7 +57,7 @@ const MainComponent = () => {
 
   return (
     <div id="main-component">
-      <Title />
+      <TitleComponent />
       <div id="description">
         서비스기획자/PM을 위한 <span>세상 쉬운</span> 상세계획서 작성 툴
       </div>
