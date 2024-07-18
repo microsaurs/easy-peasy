@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping
@@ -26,11 +27,15 @@ public class FileController {
     private static final Logger logger = Logger.getLogger(FileController.class.getName());
 
     @PostMapping("/upload")
+
     public Map<String, String> uploadFile(@RequestParam("file") MultipartFile file) {
         Map<String, String> response = new HashMap<>();
         try {
             // 서버의 파일 저장 경로를 가져옵니다.
-            String uploadDir = System.getProperty("user.dir") + "/files/";
+
+            //사용자 home 밑에 file 디렉토리 만들어서 저장됨
+            //테스트시 참고
+            String uploadDir = System.getProperty("user.home") + "/files/";
             File uploadDirFile = new File(uploadDir);
             if (!uploadDirFile.exists()) {
                 // 업로드 디렉토리가 존재하지 않으면 생성합니다.
@@ -64,7 +69,7 @@ public class FileController {
     @CrossOrigin
     @GetMapping("/load")
     public ResponseEntity<?> loadFile(@RequestParam String fileName) {
-        String path = System.getProperty("user.dir") + "/files/"; // 이미지가 저장된 위치
+        String path = System.getProperty("user.home") + "/files/"; // 이미지가 저장된 위치
         Resource resource = new FileSystemResource(path + fileName);
         return new ResponseEntity<>(resource, HttpStatus.OK);
     }
